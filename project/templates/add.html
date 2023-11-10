@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container-fluid">
+    <h1>What's Your Story?</h1><p>Tell the world that beautiful story of yours</p></div>
+
+  
+  <!--
+	<div class="container-fluid">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Holy there!</strong> Make your story count ):
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+		<form method="post" class="col-6">
+      <div class="mb-2 col-12">
+          <label for="title" class="form-label">Title</label>
+          <input name="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="The Legend of The Sea">
+      </div>
+      <div class="mb-2 col-12">
+        <label for="caption" class="form-label">Caption</label>
+        <input name="caption" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Interesting caption (min 20 char)">
+    </div>
+      <div class="mb-2">
+        <label for="content" class="form-label">Tell your story</label>
+        <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <div class="mb-2">
+        <label for="image" class="form-label">Cover Image Url</label>
+        <!--<input type="file" id="image" name="image" onchange="readURL(this);">->
+        <input name="image" type="text" class="form-control" id="exampleFormControlInput1" placeholder="http://imabur.com/ledgend.jpg">
+    </div>
+    <div class="d-grid gap-2">
+      <button class="btn btn-primary" type="submit" style="margin-top: 15px;">Post Now</button>
+    </div>
+    </form>
+	</div>
+-->
+
+
+
+
+
+
+
+
+
+
+
+  <div class="container rounded bg-white mt-5 mb-5">
+   
+    <div class="row">
+       
+        <div class="col-md-8 border-right holder">
+          
+            <div class="p-3 py-5 card-add-story">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Story details</h4>
+                </div>
+                <form method="post" class="storyForm" id="storyForm">
+                  {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                      <div class="notification is-danger">
+                          {{ messages[0] }}
+                      </div>
+                  {% endif %}
+                  {% endwith %}
+
+
+                <div class="row mt-2" style="margin-bottom: 40px;">
+                    <div class="col-md-8">
+                      <label for="title" class="labels">Title</label>
+                      <input style="height: 60px; border-radius: 16px;" id="title"  name="title"  type="text" class="form-control" placeholder="title" value=""></div>
+                    
+                </div>
+                <div class="row mt-3">
+                  <div class="col-md-8" style="height: 60px; margin-bottom: 45px;"><label for="caption" class="labels">Caption</label><input id="caption" style="height: 60px;  border-radius: 16px;" name="caption" type="text" class="form-control" value="" placeholder="My lover is wealthy"></div>
+                  <div class="col-md-8" style="height: 60px; margin-bottom: 45px;"><label for="story-part" class="labels">Story part</label><input style="height: 60px;  border-radius: 16px;" name="part" type="text" class="form-control" value="" placeholder="Part 1"></div>
+
+                  <div class="col-md-12"><label for="content" class="labels">Story content</label><input style="height: 170px;  border-radius: 16px;" name="content" type="text" class="form-control" placeholder="Tell your story here..." value=""></div>
+                  <div class="col-md-8" style="height: 60px; margin-bottom: 45px; margin-top: 25px;"><label for="main-character" class="labels">Main character</label><input style="height: 60px;  border-radius: 16px;" name="character" type="text" class="form-control" value="" placeholder="List names of main characters separated by space"></div>
+                    
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6" style="margin-top: 35px;"><label class="labels">Story Category</label></div>
+                    
+                    <div class="row mt-3">
+                      <select name="category" class="drop_decor" style="border-width: 0px; width: 250px;">
+                        <option value="{{story_cat[0]}}" selected>{{story_cat[0]}}</option>
+                        {% for category in story_cat %}
+                          <option value="{{category}}">{{category}}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                    
+
+                    <div class="col-md-6" style="margin-top: 35px;"><label class="labels">Who are your audience</label></div>
+                    <div class="row mt-3">
+                      <select name="audience" class="drop_decor" style="border-width: 0px; width: 250px; padding-right: 8px;">
+                        <option value="{{story_aud[0]}}" selected>{{story_aud[0]}}</option>
+                        {% for audience in story_aud %}
+                          <option value="{{audience}}">{{audience}}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+
+
+                    <div class="col-md-6" style="margin-top: 35px;"><label class="labels">Copyright</label></div>
+                    <div class="row mt-3">
+                      <select name="copyright" class="drop_decor" style="border-width: 0px; width: 250px; padding-right: 8px;">
+                        <option value="{{story_copyright[0]}}" selected>{{story_copyright[0]}}</option>
+                        {% for cr in story_copyright %}
+                          <option value="{{cr}}">{{cr}}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+
+                    <img class="rounded-circle mt-5" width="150px" height="200px" src="../static/images/profile_img.png">
+                    <input name="image" type="text" class="form-control" id="exampleFormControlInput1" placeholder="http://imabur.com/ledgend.jpg">
+              
+                </div>
+
+                <div class="mt-5 text-center"><button class="btn btn-primary post-story" type="submit">Post Story</button></div>
+              </form>
+              </div>
+           
+        </div>
+        <div class="col-md-3 border-right">
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <img class="rounded-circle mt-5" width="50px" height="50px" src="../static/images/profile_img.png">
+            <input name="image" type="text" class="form-control" id="exampleFormControlInput1" placeholder="http://imabur.com/ledgend.jpg">
+              <span> </span>
+            </div>
+      </div>
+        <!--
+        <div class="col-md-4">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between  experience"><span>Your Stories</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Edit</span></div><br>
+                <div class="container-fluid" style="padding: 0px;">
+                  <div class="row">
+                    {% for story in mStory %}
+                    <div class="col">
+                      <div class="card" style="width: 5rem;  margin-bottom: 22px;">
+                        <img src="{{story.image}}" class="card-img-top" alt="..."
+                          style="object-fit: cover;  height:75px; width:100%; ">
+                          <div class="card-body" >
+                          <h6 class="card-title" style="font-size: 8px;">{{story.title}}</h6>
+                          <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" style="height: 15px; width: 15px; font-size: 9px;" 
+                            type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                              Option
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                              <li><a><button class="dropdown-item" type="button">View</button></a></li>
+                              <li><a href="{{url_for('edit', story_id=story.id)}}"><button class="dropdown-item" type="button">Edit</button></a></li>
+                              <li><form method="POST" action="{{url_for('delete', story_id=story.id)}}">
+                                <input type="submit" value="Delete" onclick="return('Confirm, Are you sure you want to delete this story?')"
+                                 class="btn btn-primary"></input></li>
+                            </ul>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              
+                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+            </div>
+        </div>
+        -->
+    </div>
+    
+</div>
+  {% endblock %}
+

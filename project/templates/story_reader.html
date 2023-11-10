@@ -1,0 +1,114 @@
+
+{% extends 'base.html' %}
+
+{% block styles %}
+    {{super()}}
+        
+        <link rel="stylesheet" href="{{url_for('../static', filename='style.css')}}">
+    {% endblock %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+{% endif %}
+{% endwith %}
+{% for story in mStory %}
+	<div class="container-fluid" style="padding: 0%;">
+        <div class="read_card" style="padding: 20px;">
+            <div class="row">
+                <div class="col-md-2 col-xs-3">
+                    <img src="{{story.image}}" alt="..." class="story-image-reader">
+                </div>
+                <div class="col">
+                    <h1 id="reader_title">{{story.title}}</h1>
+                    <p class="reader_caption">{{story.caption}}</p>
+                    <a href="#" id="paid_story"><i class="fa fa5-dollar-sign"></i> Paid Story</a>
+                    <ul class="follow-list">
+                        <li><a href="#"><i class="fa fa-heart"></i> 150</a></li>
+                          <li><a href="#"><i class="fa fa-eye"></i> 200</a></li>
+                          <li><a href="#"><i class="fa fa-book"></i> 80</a></li>
+                          <li><a href="#"><i class="fa fa-comments"></i> 120</a></li>
+                    </ul>
+                   
+                    
+                </div>
+            </div>
+           
+                <div class="btn-group save-story" role="group" aria-label="Button group with nested dropdown">
+                    <button type="button" class="btn">Preview Story</button>
+                  
+                    <div class="btn-group" role="group">
+                      <button id="btnGroupDrop1" type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Add
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <li><a class="dropdown-item" href="#">Favorites</a></li>
+                        <li><a class="dropdown-item" href="#">Read Later</a></li>
+                      </ul>
+                    </div>
+                  </div>
+            
+
+    </div>
+    <div class="row" style="margin-top: 15px;">
+        <div class="col-md-8 col-xs-12">
+            <h1 class="story_part">Part One</h1>
+            <p class="story_con">{{story.content}}</p>
+        </div>
+        <div class="col-md-4">
+            <h1 class="other_stories_title">You may also like</h1>
+            <article class="other_stories_card">
+                <img
+                  class="card__background"
+                  src="https://th.bing.com/th/id/R.7d67152445115f97bd33edbdce991a65?rik=3TXP1H2SVwLp5w&pid=ImgRaw&r=0"
+                  alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+                  width="1300"
+                  height="1700"
+                />
+                <div class="card__content | flow">
+                  <div class="card__content--container | flow">
+                    <h2 class="card__title">Colombia</h2>
+                    <p class="card__description">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
+                      labore laudantium deserunt fugiat numquam.
+                    </p>
+                  </div>
+                  <button class="card__button">Read more</button>
+                </div>
+              </article>
+
+              <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between  experience"><span>Movie Scripts</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Edit</span></div><br>
+                    <div class="container-fluid" style="padding: 0px;">
+                      <div class="row">
+                        {% for story in mStory %}
+                        <div class="col">
+                          <div class="card" style="width: 5rem;  margin-bottom: 22px;">
+                            <img src="{{story.image}}" class="card-img-top" alt="..."
+                              style="object-fit: cover;  height:75px; width:100%; ">
+                              <div class="card-body" >
+                              <h6 class="card-title" style="font-size: 8px;">{{story.title}}</h6>
+
+                              
+                            </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  
+                    <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 id="title">{{story.title}}</h1><p>{{story.caption}}</p>
+    <img src="{{story.image}}" class="card-img-top" alt="..." style="object-fit: cover;  height:500px; width:100%; ">
+    <p>{{story.content}}</p>
+	</div>
+{% endfor %}
+ {% endblock %}
