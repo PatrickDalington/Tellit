@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, url_for, redirect, request, flash
+from flask import Blueprint, render_template, url_for, redirect, request, flash, Flask
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 import uuid as uuid
@@ -10,10 +10,11 @@ import secrets
 from base64 import b64encode
 import base64
 from io import BytesIO
+from flask_bcrypt import Bcrypt
 
 auth = Blueprint('auth', __name__)
-
-
+app = Flask(__name__)
+bcrypt = Bcrypt(app)
 
 
 @auth.route('/login')
@@ -27,12 +28,11 @@ def login_post():
     password = request.form.get('password')
     remember = True if request.form.get('remember') else False
 
-
     user = User.query.filter_by(email=email).first()
 
     # check if the user actually exists
     # take the user-supplied password, hash it, and compare it to the hashed password in the database
-    if not user or not check_password_hash(user.password, password):
+    if not user or not bcrypt.check_password_hash(user.password, password):
         flash('Please check your login details and try again.')
         return redirect(url_for('auth.login'))  # if the user doesn't exist or password is wrong, reload the page
 
@@ -49,7 +49,7 @@ def signup():
 @auth.route('/signup', methods=['POST'])
 def signup_post():
     # Starting the signup process
-    hashed_password = generate_password_hash(request.form['password'], method='sha256')
+    hashed_password = bcrypt.generate_password_hash(request.form['password']).decode('utf-8')
     user_id = secrets.token_urlsafe(16)
     first_name = request.form['first_name']
     last_name = request.form['last_name']
@@ -59,11 +59,9 @@ def signup_post():
     password = hashed_password
     profile_pic = request.files['inputFile']
 
-
     # Check if its a picture
     if not profile_pic:
         return 'No pic selected', 400
-   
 
     # Grabbing image file name
     pic_filename = secure_filename(profile_pic.filename)
@@ -72,19 +70,17 @@ def signup_post():
     imageName = str(uuid.uuid1()) + "_" + pic_filename
 
     # Referencing to the original profile pic name to the unique name
-    #profile_pic = pic_name
-
+    # profile_pic = pic_name
 
     # Save the actual image
-    #profile_pic.save(os.path.join(app.config['UPLOAD_FOLDER']), pic_name)
+    # profile_pic.save(os.path.join(app.config['UPLOAD_FOLDER']), pic_name)
 
     # Convert to string to save to database
-    
 
+    user = User.query.filter_by(
+        email=email).first()  # if this returns a user, then the email already exists in database
 
-    user = User.query.filter_by(email=email).first() # if this returns a user, then the email already exists in database
-
-    if user: # if a user is found, we want to redirect back to signup page so user can try again  
+    if user:  # if a user is found, we want to redirect back to signup page so user can try again
         flash('Email address already exists')
         return redirect(url_for('auth.signup'))
 

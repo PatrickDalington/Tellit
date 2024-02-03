@@ -2,7 +2,6 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import secrets
 from flask_login import LoginManager
-from flask_uploads import IMAGES, UploadSet, configure_uploads
 
 # init SQLAlchemy
 db = SQLAlchemy()
@@ -16,16 +15,7 @@ def create_app():
     app.config['SECRET_KEY'] = secret
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///stories.db'
-    
 
-   
-
-    
-
-    
-
-
-    
     db.init_app(app)
     with app.app_context():
         db.create_all()
