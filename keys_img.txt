@@ -1,2 +1,0 @@
-Client ID: 8ec1ebd4fb56477
-Secret Key: f9b606b816e1acf494d0e5255332ebc13905b952
