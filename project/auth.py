@@ -57,17 +57,9 @@ def signup_post():
     username = request.form['username']
     email = request.form['email']
     password = hashed_password
-    profile_pic = request.files['inputFile']
-
-    # Check if its a picture
-    if not profile_pic:
-        return 'No pic selected', 400
-
-    # Grabbing image file name
-    pic_filename = secure_filename(profile_pic.filename)
 
     # Making the image file name unique
-    imageName = str(uuid.uuid1()) + "_" + pic_filename
+    imageName = "default"
 
     # Referencing to the original profile pic name to the unique name
     # profile_pic = pic_name
@@ -86,7 +78,7 @@ def signup_post():
 
     new_user = User(user_id=user_id, first_name=first_name, last_name=last_name,
                     phone=phone, username=username, email=email,
-                    password=password, imageUrl=profile_pic.read(), imageName=imageName)
+                    password=password, imageUrl="default", imageName=imageName)
 
     # Otherwise,
     # Adding new user to database

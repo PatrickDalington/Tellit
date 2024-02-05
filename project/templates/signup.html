@@ -21,39 +21,37 @@
         <div class="col-md-12 border-right">
 
 
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">SignUp</h4>
-                </div>
+            <div class="signup-container">
+                    <form class="signup-form" action="#" method="post">
+                      <h2>Sign Up</h2>
+                      <div class="input-group">
+                        <label for="first_name" class="labels">First name</label>
+                        <input name="first_name"  type="text" class="form-control" placeholder="John" value="" required>
+                      </div>
+                      <div class="input-group">
+                        <label for="last_name" class="labels">Last name</label>
+                        <input name="last_name"  type="text" class="form-control" placeholder="Deo" value="" required>
+                      </div>
+                      <div class="input-group">
+                        <label for="username" class="labels">Username</label>
+                        <input name="username" type="text" class="form-control" placeholder="@johnd5" value="" required>
+                      </div>
+                      <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="johndeo@gmail.com" required>
+                      </div>
+                       <div class="input-group">
+                        <label for="phone">Phone</label>
+                        <input name="phone" type="text" class="form-control" placeholder="+1 (789) 7868 898" value="" required>
+                      </div>
+                      <div class="input-group">
+                        <label for="password">Password</label>
+                        <input name="password" type="text" class="form-control" placeholder="Password" value="" required>
+                      </div>
+                      <button type="submit">Sign Up</button>
+                    </form>
+                  </div>
 
-                <form method="POST" enctype="multipart/form-data" action="/signup">
-                  
-                <div class="row mt-2">
-                    <div class="col-md-6"><label for="first_name" class="labels">First Name</label><input name="first_name"  type="text" class="form-control" placeholder="first name" value=""></div>
-                    <div class="col-md-6"><label for="last_name" class="labels">Last Name</label><input name="last_name" type="text" class="form-control" value="" placeholder="last name"></div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-md-12"><label for="username" class="labels">Username</label><input name="username" type="text" class="form-control" placeholder="@username" value=""></div>
-                  <div class="col-md-12"><label for="password" class="labels">Passwword</label><input name="password" type="text" class="form-control" placeholder="password" value=""></div>
-                    <div class="col-md-12"><label for="phone" class="labels">Mobile Number</label><input name="phone" type="text" class="form-control" placeholder="enter phone number" value=""></div>
-                    <div class="col-md-12"><label for="email" class="labels">Email</label><input name="email" type="text" class="form-control" placeholder="enter your country" value=""></div> 
-                </div>
-                <div class="form-group">
-                  
-                  <img id="profile-image" src="{{url_for('static', filename='profile_img.png')}}" alt="profile image" style="margin-top: 29px; height: 200px; width: 200px;"/>
-                  <label for="inputFile">Upload profile image</label>
-                  <input type="file" id="inputFile" name="inputFile" onchange="readURL(this);">
-                </div>
-                <!--
-                <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                </div>
-                -->
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">SignUp</button></div>
-              </form>
-            </div>
-            
         </div>
         <!--
         <div class="col-md-4">

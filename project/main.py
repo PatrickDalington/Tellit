@@ -193,18 +193,34 @@ def create():
 
 @main.route('/all-best-stories/')
 def all_best_stories():
-    all_user_stories = Story.query.all()
+    al_best_stories = Story.query.all()
 
     # Generating random number of script for UI beautification
     import random
 
     # STORIES FOR THE WEEK [ VIEW ALL BEST STORIES]
-    mStory = [i for i in all_user_stories]
+    mStory = [i for i in al_best_stories]
 
     # Shuffle story list
     random.shuffle(mStory)
 
     return render_template('best_stories.html', mStory=mStory)
+
+
+@main.route('/all-action-stories/')
+def all_action_stories():
+    al_action_stories = Story.query.all()
+
+    # Generating random number of script for UI beautification
+    import random
+
+    # STORIES FOR THE WEEK [ VIEW ALL BEST STORIES]
+    mStory = [i for i in al_action_stories]
+
+    # Shuffle story list
+    random.shuffle(mStory)
+
+    return render_template('action_stories.html', mStory=mStory)
 
 
 @main.route('/success/')

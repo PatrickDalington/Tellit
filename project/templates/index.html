@@ -99,9 +99,7 @@
 			{% endfor %}
 		</div>
 		<button class="rt_btn"><a href="{{url_for('main.all_best_stories')}}">View all</a></button>
-		
-		
-	
+
 		<div class="swiper-button-next swiper-navBtn"></div>
 		<div class="swiper-button-prev swiper-navBtn"></div>
 		
@@ -149,7 +147,7 @@
 				
 			{% endfor %}
 		</div>
-		<button class="rt_btn">View all</button>
+		<button class="rt_btn"><a href="{{url_for('main.all_action_stories')}}">View all</a></button>
 		
 		
 	
@@ -403,34 +401,56 @@
 
 
 
+<div class="container-for-popular">
+	{% if not mFantasyStory %}
+		<h1  class="hm-item2-h1-title" style="display: none;"></h1>
+		<script>
+			document.getElementById("homeHolder").style.display = "none";
+		</script>
+	{% else %}
+		<h1  class="hm-item2-h1-title">Most Read Fantasy Stories</h1>
+	{% endif %}
+
+	<div class="swiper">
+
+			<div class="card-wrapper swiper-wrapper">
 
 
+				{% for story in mFantasyStory %}
+				<div class="col-md-2 col-3 card-st swiper-slide">
+					<figure class="card__thumb">
+						<img src="{{story.image}}" class="card__image">
+						<figcaption class="card__caption">
+							<h2 class="card__title">{{story.title}}</h2>
+							<p class="card__snippet">{{story.caption}}</p>
+							<form action="/reader/{{story.post_id}}" method="POST">
+									<button name="read" type="submit" class="read-btn card__button_" value="{{story.post_id}}">Read</button>
+							</form>
 
+						</figcaption>
 
-
-
-<div class="container .container-for-popular">
-	<h1  class="hm-item2-h1-title">Most Read Fantasy Stories</h1>
-	<div class="row">
-
-		{% for story in mFantasyStory %}
-			<div class="col-md-2 col-3 card-st">
-				<figure class="card__thumb">
-					<img src="{{story.image}}" class="card__image">
-					<figcaption class="card__caption">
-						<h2 class="card__title">{{story.title}}</h2>
-						<p class="card__snippet">{{story.caption}}</p>
-						<form action="/reader/{{story.post_id}}" method="POST">
-								<button name="read" type="submit" class="read-btn card__button_" value="{{story.post_id}}">Read</button>
-						</form>
-					</figcaption>
-				</figure>
+					</figure>
+					<!--
+					<div class="cat-of-story" style="border-radius: 20px; text-align: center;
+				padding: 8px; font-size: 12px; background-color: rgb(221, 223, 223);">{{story.story_category}}</div>
+				-->
 			</div>
-		{% endfor %}
-		
+
+			{% endfor %}
+		</div>
+		<button class="rt_btn">View all</button>
+
+
+
+		<div class="swiper-button-next swiper-navBtn"></div>
+		<div class="swiper-button-prev swiper-navBtn"></div>
+
 	</div>
-	<button class="rt_btn" onclick="rightScroll()">Left</button>
 </div>
+
+
+
+
 
 <!--
 <div class="container-fluid" style="display:flex;">
@@ -473,7 +493,7 @@
 			</div>
 			{% endfor %}
 		</div>
-
+</div>
 		-->
-	</div>
+
  {% endblock %}
