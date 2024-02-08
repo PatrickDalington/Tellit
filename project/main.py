@@ -223,6 +223,22 @@ def all_action_stories():
     return render_template('action_stories.html', mStory=mStory)
 
 
+@main.route('/all-movie-script/')
+def all_movie_script():
+    al_movie_script = Story.query.all()
+
+    # Generating random number of script for UI beautification
+    import random
+
+    # STORIES FOR THE WEEK [ VIEW ALL BEST STORIES]
+    mScript = [i for i in al_movie_script]
+
+    # Shuffle story list
+    random.shuffle(mScript)
+
+    return render_template('movie_script.html', mScript=mScript)
+
+
 @main.route('/success/')
 def success():
     return render_template('success.html')

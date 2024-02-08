@@ -195,7 +195,9 @@
 								<ul class='page'>
 									<li></li>
 									<li>
-										<a class="btn" href="#">View Script</a>
+										<form action="/reader/{{story.post_id}}" method="POST">
+											<button name="read" type="submit" class="read-btn card__button_ btn" value="{{story.post_id}}">View Script</button>
+										</form>
 									</li>
 									<li></li>
 									<li></li>
@@ -250,7 +252,7 @@
 				
 			
 		</div>
-		<button class="rt_btn">View all</button>
+		<button class="rt_btn"><a href="{{url_for('main.all_movie_script')}}">View all</a></button>
 		
 		
 	
