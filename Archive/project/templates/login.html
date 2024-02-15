@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    {{super()}}
+        <link rel="stylesheet" href="{{url_for('../static', filename='style.css')}}">
+    {% endblock %}
+{% block content %}
+
+  <div class="container">
+
+        <div class="col-md-12 border-right">
+          
+        <div class="p-3 py-5">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div style="margin-top:80px;" class="notification is-danger">
+                        {{ messages[0] }}
+                    </div>
+                 {% endif %}
+                 {% endwith %}
+
+                <div class="login-container">
+                    <form class="login-form" method="POST" action="/login">
+                      <h2>Login</h2>
+                      <div class="input-group">
+
+                        <input name="email" type="email" class="form-control" placeholder="email" value="" required>
+                      </div>
+                      <div class="input-group">
+                        <input name="password" type="password" class="form-control" placeholder="password" value="" required>
+                      </div>
+                      <button type="submit">Login</button>
+                    </form>
+                </div>
+
+            
+        </div>
+        <!--
+        <div class="col-md-4">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between  experience"><span>Your Stories</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Edit</span></div><br>
+                <div class="container-fluid" style="padding: 0px;">
+                  <div class="row">
+                    {% for story in mStory %}
+                    <div class="col">
+                      <div class="card" style="width: 5rem;  margin-bottom: 22px;">
+                        <img src="{{story.image}}" class="card-img-top" alt="..."
+                          style="object-fit: cover;  height:75px; width:100%; ">
+                          <div class="card-body" >
+                          <h6 class="card-title" style="font-size: 8px;">{{story.title}}</h6>
+                          <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" style="height: 15px; width: 15px; font-size: 9px;" 
+                            type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                              Option
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                              <li><a><button class="dropdown-item" type="button">View</button></a></li>
+                              <li><a href="{{url_for('edit', story_id=story.id)}}"><button class="dropdown-item" type="button">Edit</button></a></li>
+                              <li><form method="POST" action="{{url_for('delete', story_id=story.id)}}">
+                                <input type="submit" value="Delete" onclick="return('Confirm, Are you sure you want to delete this story?')"
+                                 class="btn btn-primary"></input></li>
+                            </ul>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              
+                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+            </div>
+        </div>
+      -->
+    </div>
+    
+</div>
+ {% endblock %}

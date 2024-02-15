@@ -97,7 +97,7 @@ def index():
     random.shuffle(mStory)
     random.shuffle(mActionStory)
 
-    return render_template('index.html', mStory=mStory, mActionStory=mActionStory, mFantasyStory=mFantasyStory,
+    return render_template('home.html', mStory=mStory, mActionStory=mActionStory, mFantasyStory=mFantasyStory,
                            random=random)
 
 

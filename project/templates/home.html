@@ -1,0 +1,590 @@
+
+
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+<div class="container-fluid hm-con-1">
+	<h1  class="hm-item-h1-title">Tell<span style="color: red;">it</span></h1>
+	<h3 class="hm-item-p-subtitle">It's time to share your story</h3>
+	<div class="container-fluid threed-photo-slider">
+	<section class="slideshow">
+		<div class="content">
+		  <div class="slider-content">
+			{% for story in mStory %}
+			<figure class="shadow"><img src="{{story.image}}" /></figure>
+			{% endfor %}
+			{% for story in mStory %}
+			<figure class="shadow"><img src="{{story.image}}" /></figure>
+			{% endfor %}
+		  </div>
+		</div>
+	  </section>
+	</div>
+</div>
+
+
+
+<div class="container-fluid" style="background-color:rgb(16, 16, 22);">
+	<div class="row">
+
+		
+			<div class="col-md-5" style="margin-top: 150px; padding-left: 60px;">
+				<p style="color: rgb(255, 145, 0);">It's very important to know that</p>
+				<h1 style="color: white; font-size: 80px; font-weight: bold;"> Amazing place to be yourself is here</h1>
+			</div>
+			<div class="col-md-7" style="margin-top: 35px; background-color: rgb(7, 5, 3); margin-bottom: 100px;">
+				<video width="100%" height="100%" autoplay loop muted style="border-radius: 36px;">
+					<source src="../static/videos/tellit_home_1_convert.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				  </video>
+			</div>
+			
+		
+	</div>
+</div>
+
+
+
+
+<div class="container-fluid" style="background-color:rgb(211, 215, 214);">
+	<div style="margin-left: 20px;" class="row">
+		<div style="margin-top: 50px;" class="col-md-6">
+			<h1 style="color:red; font-weight: bold; font-size: 80px;">Stories</h3>
+		</div>
+		<div style="margin-top: 60px;" class="col-md-6">
+			<hr></hr>
+		</div>
+	</div>
+	<h3 style="margin-left: 30px; color: rgb(0, 0, 0); font-size: 30px; font-weight: bold;"> Read all type of stories</h1>
+	<h5 style="margin-left: 30px;"> You can read stories ranging from <span style="color: rgb(247, 133, 26);">romantic</span>, 
+		<span style="color: rgb(255, 0, 34);">comedy</span>, <span style="color: rgb(255, 0, 217);">fanfic</span>, 
+		<span style="color: rgb(0, 17, 255);">memories</span> and so on. Sharing personal stories fosters connection and empowerment, enabling individuals to connect deeply and inspire others.</h5>
+
+	<div class="row">
+
+		
+		<div class="col-md-12" style="margin-top: 70px; background-color: rgb(211, 215, 214); margin-bottom: 100px; ">
+			<video width="100%" height="100%" autoplay loop muted style="border-radius: 36px; padding-right: 10px; padding-left: 10px;">
+				<source src="../static/videos/tellit_home_3.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			  </video>
+		</div>
+	
+			
+			
+		
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid" style="background-color:rgb(249, 249, 249);">
+	<div style="margin-left: 20px;" class="row">
+		<div style="margin-top: 50px;" class="col-md-6">
+			<h1 style="color:red; font-weight: bold; font-size: 80px;">Movie Scripts</h3>
+		</div>
+		<div style="margin-top: 60px;" class="col-md-6">
+			<hr></hr>
+		</div>
+	</div>
+	<h3 style="margin-left: 30px; color: rgb(0, 0, 0); font-size: 30px; font-weight: bold;"> Are you a producer or a film maker?</h1>
+	<h5 style="margin-left:  30px;"> You can read stories ranging from <span style="color: rgb(247, 133, 26);">romantic</span>, 
+		<span style="color: rgb(255, 0, 34);">comedy</span>, <span style="color: rgb(255, 0, 217);">fanfic</span>, 
+		<span style="color: rgb(0, 17, 255);">memories</span> and so on. Sharing personal stories fosters connection and empowerment, enabling individuals to connect deeply and inspire others.</h5>
+
+	<div class="row">
+
+		
+		<div class="col-md-12" style="margin-top: 70px; background-color: rgb(249, 249, 249); ">
+			<video width="100%" height="100%" autoplay loop muted style="border-radius: 36px; padding-right: 30px; padding-left: 30px;">
+				<source src="../static/videos/tellit_home_5.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			  </video>
+		</div>
+	
+			
+			
+		
+	</div>
+</div>
+
+
+
+
+
+
+
+<div class="container-fluid" style="background-color:rgb(36, 38, 55);">
+	<div style="margin-left: 20px;" class="row">
+		<div style="margin-top: 50px;" class="col-md-4">
+			<h1 style="color:red; font-weight: bold; font-size: 80px;">Skits</h3>
+		</div>
+		<div style="margin-top: 60px;" class="col-md-8">
+			<hr></hr>
+		</div>
+	</div>
+	<h3 style="margin-left: 30px; color: rgb(240, 240, 240); font-size: 30px; font-weight: bold;"> Come get content for your skit here anytime </h1>
+	<h5 style="margin-left: 30px; color: whitesmoke;"> You can you can get skit contents ranging from <span style="color: rgb(247, 133, 26);">romantic</span>, 
+		<span style="color: rgb(255, 0, 34);">comedy</span>, <span style="color: rgb(255, 0, 217);">fanfic</span>, 
+		<span style="color: rgb(0, 17, 255);">memories</span> and so on. Sharing personal stories fosters connection and empowerment, enabling individuals to connect deeply and inspire others.</h5>
+
+	<div class="row">
+
+		
+		<div class="col-md-12" style="margin-top: 70px; background-color: rgb(36, 38, 55); ">
+			<video width="100%" height="100%" autoplay loop muted style="border-radius: 36px; padding-right: 30px; padding-left: 30px;">
+				<source src="../static/videos/tellit_web_5.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			  </video>
+		</div>
+	
+			
+			
+		
+	</div>
+</div>
+
+
+
+
+
+
+<div class="container-for-popular">
+	<h1  class="hm-item2-h1-title">Best Stories For The Week</h1>
+	<div class="swiper">
+	
+			<div class="card-wrapper swiper-wrapper">
+				
+				
+				{% for story in mStory %}
+				<div class="col-md-2 col-3 card-st swiper-slide">
+					<figure class="card__thumb">
+						<img src="{{story.image}}" class="card__image">
+						<figcaption class="card__caption">
+							<h2 class="card__title">{{story.title}}</h2>
+							<p class="card__snippet">{{story.caption}}</p>
+							<form action="/reader/{{story.post_id}}" method="POST">
+									<button name="read" type="submit" class="read-btn card__button_" value="{{story.post_id}}">Read</button>
+							</form>
+							
+						</figcaption>
+						
+					</figure>
+					<div class="cat-of-story" style="border-radius: 20px; text-align: center; 
+				padding: 8px; font-size: 12px; background-color: rgb(221, 223, 223);">{{story.story_category}}</div>
+				</div>
+				
+			{% endfor %}
+		</div>
+		<button class="rt_btn"><a href="{{url_for('main.all_best_stories')}}">View all</a></button>
+
+		<div class="swiper-button-next swiper-navBtn"></div>
+		<div class="swiper-button-prev swiper-navBtn"></div>
+		
+	</div>
+</div>
+
+
+
+
+
+<div class="container-for-action">
+	{% if not mActionStory %}
+		<h1  class="hm-item2-h1-title" style="display: none;"></h1>
+		<script>
+			document.getElementById("homeHolder").style.display = "none";
+		</script>
+	{% else %}									
+		<h1  class="hm-item2-h1-title">Trending  Action Stories</h1>
+	{% endif %}				
+	
+	<div class="swiper">
+	
+			<div class="card-wrapper swiper-wrapper">
+				
+				
+				{% for story in mActionStory %}
+				<div class="col-md-2 col-3 card-st swiper-slide">
+					<figure class="card__thumb">
+						<img src="{{story.image}}" class="card__image">
+						<figcaption class="card__caption">
+							<h2 class="card__title">{{story.title}}</h2>
+							<p class="card__snippet">{{story.caption}}</p>
+							<form action="/reader/{{story.post_id}}" method="POST">
+									<button name="read" type="submit" class="read-btn card__button_" value="{{story.post_id}}">Read</button>
+							</form>
+							
+						</figcaption>
+						
+					</figure>
+					<!--
+					<div class="cat-of-story" style="border-radius: 20px; text-align: center; 
+				padding: 8px; font-size: 12px; background-color: rgb(221, 223, 223);">{{story.story_category}}</div>
+				-->
+			</div>
+				
+			{% endfor %}
+		</div>
+		<button class="rt_btn"><a href="{{url_for('main.all_action_stories')}}">View all</a></button>
+		
+		
+	
+		<div class="swiper-button-next swiper-navBtn"></div>
+		<div class="swiper-button-prev swiper-navBtn"></div>
+		
+	</div>
+</div>
+
+
+	
+
+<div class="container-for-script">
+	<h1  class="" style="font-size: 40px;
+	font-weight: bolder;
+	margin-bottom: 65px;
+	margin-left: 90px;
+	margin-top: 50px;">Movie Scripts Available</h1>
+	<div class="swiper">
+	
+			<div class="card-wrapper swiper-wrapper">
+				
+				
+				
+						{% for story in mStory %}
+						<div class="component swiper-slide">
+		
+							<ul class="align">
+						<li>
+							<figure class='book'>
+			
+								<!-- Front -->
+			
+										<ul class='hardcover_front'>
+											<li>
+												<img src="{{story.image}}" alt="" width="100%" height="100%" style="height: 217px;">
+											</li>
+											<li></li>
+										</ul>
+			
+								
+			
+								<!-- Pages -->
+			
+								<ul class='page'>
+									<li></li>
+									<li>
+										<form action="/reader/{{story.post_id}}" method="POST">
+											<button name="read" type="submit" class="read-btn card__button_ btn" value="{{story.post_id}}">View Script</button>
+										</form>
+									</li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+			
+								<!-- Back -->
+			
+								<ul class='hardcover_back'>
+									<li></li>
+									<li></li>
+								</ul>
+								<ul class='book_spine'>
+									<li></li>
+									<li></li>
+								</ul>
+
+								<!--
+								<figcaption>
+									<h1>{{story.title}}</h1>
+									<span>By {{story.poster_fist_name}} {{story.poster_last_name}}</span>
+									<p>{{story.content}}</p>
+								</figcaption>
+								-->
+							</figure>
+						</li>
+					
+					</ul>
+				</div>
+						{% endfor %}
+					
+			
+			
+				<!--
+				<div class="container container-m-v2">
+					{% for story in mStory %}
+				  <div class="card-m-v2" style="--cards:5">
+					<div class="child-m-v2">
+					  <h2 class="m-title">{{story.title}}</h2>
+					  <p class="m-poster">By Patrick Dalington</p>
+					</div>
+					
+					<div class="child-m-v2"></div>
+					<div class="child-m-v2"></div>
+					<div class="child-m-v2"></div>
+					<div class="child-m-v2"></div>
+					
+				  </div>
+				  {% endfor %}
+				</div>
+			-->
+				
+			
+		</div>
+		<button class="rt_btn"><a href="{{url_for('main.all_movie_script')}}">View all</a></button>
+		
+		
+	
+		<div class="swiper-button-next swiper-navBtn"></div>
+		<div class="swiper-button-prev swiper-navBtn"></div>
+		
+	</div>
+</div>
+
+
+
+
+<!-- 	ALL SCRIPT DISPLAY PAGE CODE
+
+<div class="container-fluid container-for-script">
+	
+
+	<div class="component">
+		
+		<ul class="align">
+			{% for story in mStory %}
+			<li>
+				<figure class='book'>
+
+					<-- Front ->
+
+							<ul class='hardcover_front'>
+								<li>
+									<img src="{{story.image}}" alt="" width="100%" height="100%" style="height: 217px;">
+								</li>
+								<li></li>
+							</ul>
+
+					
+
+					
+
+					<ul class='page'>
+						<li></li>
+						<li>
+							<a class="btn" href="#">View Script</a>
+						</li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+
+					
+
+					<ul class='hardcover_back'>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul class='book_spine'>
+						<li></li>
+						<li></li>
+					</ul>
+					<figcaption>
+						<h1>{{story.title}}</h1>
+						<span>By {{story.poster_fist_name}} {{story.poster_last_name}}</span>
+						<p>{{story.content}}</p>
+					</figcaption>
+				</figure>
+			</li>
+			{% endfor %}
+		</ul>
+
+	-->
+	
+</div>
+
+</div>
+
+
+
+<div class="container-for-skit">
+	<h1  class="" style="font-size: 40px;
+	font-weight: bolder;
+	margin-bottom: 65px;
+	margin-left: 90px;
+	margin-top: 50px;">Skit Available</h1>
+
+
+<div class="container container-m-v2">
+	{% for story in mStory %}
+  <div class="card-m-v2" style="--cards:5">
+	<div class="child-m-v2">
+	  <h2 class="m-title">{{story.title}}</h2>
+	  <p class="m-poster">{{poster_fist_name}} {{poster_last_name}}</p>
+	</div>
+	
+	<div class="child-m-v2"></div>
+	<div class="child-m-v2"></div>
+	<div class="child-m-v2"></div>
+	<div class="child-m-v2"></div>
+	
+  </div>
+  {% endfor %}
+</div>
+</div>
+
+
+
+
+
+<div class="container-for-user">
+	<h1  class="" style="font-size: 40px;
+	font-weight: bolder;
+	margin-bottom: 65px;
+	margin-left: 90px;
+	margin-top: 50px;">Popular Users</h1>
+
+
+<div class="slide-container swiper">
+	<div class="slide-content">
+		<div class="card-wrapper swiper-wrapper">
+			
+			{% for story in mStory %}
+			<div class="card swiper-slide">
+				<div class="image-content">
+					<span class="overlay"></span>
+
+					<div class="card-image">
+						<img src="images/profile9.jpg" alt="" class="card-img">
+					</div>
+				</div>
+
+				<div class="card-content">
+					<h2 class="name">David Dell</h2>
+					<p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+					<button class="button">View More</button>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="swiper-button-next swiper-navBtn"></div>
+	<div class="swiper-button-prev swiper-navBtn"></div>
+	<div class="swiper-pagination"></div>
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="container-for-popular">
+	{% if not mFantasyStory %}
+		<h1  class="hm-item2-h1-title" style="display: none;"></h1>
+		<script>
+			document.getElementById("homeHolder").style.display = "none";
+		</script>
+	{% else %}
+		<h1  class="hm-item2-h1-title">Most Read Fantasy Stories</h1>
+	{% endif %}
+
+	<div class="swiper">
+
+			<div class="card-wrapper swiper-wrapper">
+
+
+				{% for story in mFantasyStory %}
+				<div class="col-md-2 col-3 card-st swiper-slide">
+					<figure class="card__thumb">
+						<img src="{{story.image}}" class="card__image">
+						<figcaption class="card__caption">
+							<h2 class="card__title">{{story.title}}</h2>
+							<p class="card__snippet">{{story.caption}}</p>
+							<form action="/reader/{{story.post_id}}" method="POST">
+									<button name="read" type="submit" class="read-btn card__button_" value="{{story.post_id}}">Read</button>
+							</form>
+
+						</figcaption>
+
+					</figure>
+					<!--
+					<div class="cat-of-story" style="border-radius: 20px; text-align: center;
+				padding: 8px; font-size: 12px; background-color: rgb(221, 223, 223);">{{story.story_category}}</div>
+				-->
+			</div>
+
+			{% endfor %}
+		</div>
+		<button class="rt_btn">View all</button>
+
+
+
+		<div class="swiper-button-next swiper-navBtn"></div>
+		<div class="swiper-button-prev swiper-navBtn"></div>
+
+	</div>
+</div>
+
+
+
+
+
+<!--
+<div class="container-fluid" style="display:flex;">
+	<div class="row" style="background-color: black;
+	display: flex;">
+		{% for story in mStory %}
+			<div class="col-md-3 mobile-dev-port">
+				<div class="portfolio-card">
+					<img class="card-image" src=""></img>
+					
+					<div class="card-textt">
+						<span class="date"></span>
+						<h2>{{story.title}}</h2>
+						<p>{{story.content}}</p>
+					</div>
+				
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		
+	</div>
+-->
+
+	<!--
+	<div class="container-fluid" style="display:flex;">
+		<div class="row">
+			{% for story in mStory %}
+			<div class="col-md-2 col-sm-6">
+				<div class="card">
+					<img src="{{story.image}}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h6 class="card-title">{{story.title}}</h6>
+							<p class="card-text">{{story.content}}</p>
+						</div>
+					<form action="/reader" method="POST">
+						<button name="read" type="submit" class="read-btn" value="{{story.post_id}}">Read</button>
+					</form>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+</div>
+		-->
+
+ {% endblock %}

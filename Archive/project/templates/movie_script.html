@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container-fluid">
+
+		<div class="container con-action" style="height: 300px; display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; background-color: black">
+			<h1 contenteditable spellcheck="false">Movie Scripts</h1>
+		</div>
+
+
+     <div class="container align-items-start" style=" margin-top: 80px;">
+        <div class="row">
+
+                {% for story in mScript %}
+
+                <div class="col-sm-3 col-md-4">
+
+                    <div class="card border-light mb-3" style="width: 400px;">
+                          <div class="row g-0">
+                            <div class="col-md-4">
+                              <img src="{{story.image}}" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <h5 class="card-title">{{story.title}}</h5>
+                                <p class="card-text" style="max-height: 20px; overflow: hidden;"><small>{{story.caption}}</small></p>
+                                <p class="card-text" style="max-height: 50px; overflow: hidden; font-size: 14px; color: rgb(116, 113, 113);">{{story.content}}</p>
+                                  <form action="/reader/{{story.post_id}}" method="POST">
+											                <button name="read" type="submit" class="movie-read-btn" value="{{story.post_id}}">Read</button>
+                                  </form>
+
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+
+                </div>
+			{% endfor %}
+
+        </div>
+   </div>
+	</div>
+ {% endblock %}

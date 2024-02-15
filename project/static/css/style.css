@@ -299,8 +299,12 @@ body {
 }
 
 .navbar a{
-    color: dark-grey;
+    color: rgb(43, 43, 43);
     margin-right: 20px;
+}
+
+.navbar a:hover{
+  color: red;
 }
 
 
@@ -614,17 +618,24 @@ footer {
 
 .hm-con-1{
   text-align: center;
-  margin-top: 100px;
+  margin-top: 250px;
 }
 
 .hm-item-h1-title{
-  font-size: 60px;
+  font-size: 85px;
   font-weight: bolder;
+  font-family: Quicksand-Bold;
+  src: url('../fonts/Quicksand-Bold.ttf');
   margin-top: 60px;
 }
 
 .hm-item-p-subtitle{
   justify-self: center;
+  font-size: 65px;
+  color: rgb(157, 3, 3);
+  font-weight: bolder;
+  font-family: Quicksand-Bold;
+  src: url('../fonts/Quicksand-Bold.ttf');
 }
 
 
@@ -1675,8 +1686,9 @@ Table of Contents
 .slideshow{
   margin: 0 auto;
   padding-top: 0px;
-  height: 500px;
+  height: 400px;
   width: 100%;
+  background-color: white;
   overflow: hidden;
   justify-content: center;
   perspective: 1700px;
