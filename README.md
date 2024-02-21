@@ -14,10 +14,10 @@ Thus, the idea struck me — why not craft codes to support individuals like her
 
 
 
-Tellit landing page: https://tellit-landing-page.netlify.app
-Tellit web page: https://tellit-page.netlify.app
-Tellit Blog post: https://medium.com/@patrickdalington11/love-what-you-do-here-is-the-history-of-how-tellit-came-about-ea4ea54f8cc4
-LinkedIn Page: https://www.linkedin.com/in/patrick-olumba/
+* Tellit landing page: https://tellit-landing-page.netlify.app
+* Tellit web page: https://tellit-page.netlify.app
+* Tellit Blog post: https://medium.com/@patrickdalington11/love-what-you-do-here-is-the-history-of-how-tellit-came-about-ea4ea54f8cc4
+* LinkedIn Page: https://www.linkedin.com/in/patrick-olumba/
 
 
 
@@ -58,8 +58,6 @@ Login tab: This page is for login user into the web app.
 ----
 
 
-## License
-All Right Reserved © 2024
 
 
 ## Challenges
@@ -94,10 +92,10 @@ I think I need to also change the habit of only hibernating my computer but maki
 
 This whole project has thought me the power of Flask and here are the few things I learnt so far.
 
-# Working with server and client side in one project.
-# Connecting mySQLite database to Flask project.
-# Opportunity to dig down more into python virtual environment.
-# Integrating python libraries.
+* Working with server and client side in one project.
+* Connecting mySQLite database to Flask project.
+* Opportunity to dig down more into python virtual environment.
+* Integrating python libraries.
 
 
 Some developers might wonder why I chose Flask over Django 😊
@@ -107,6 +105,9 @@ The reason for this is because Flask allows developers to have more control over
 Another reason is because this project is not an heavyweight app. Flask lightweight nature also means faster startup times and lower resource consumption compared to Django, making it a preferable choice for projects with limited hardware resources or those requiring high performance.
 
 
+
+## License
+All Right Reserved © 2024
 
 
 ## Authors
